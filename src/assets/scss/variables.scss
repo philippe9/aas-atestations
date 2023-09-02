@@ -1,0 +1,78 @@
+/* --------------------------------------------------------------------
+    lbm CONTACT 2023
+	Default Theme Variables
+/*-------------------------------------------------------------------- */
+
+$primary: #0073bd;
+$secondary: #9ca6a5;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "danger": #ff4136,
+);
+$theme-colors: (
+  "primary": $primary,
+) !default;
+
+:root {
+  --stack: "Poppins", "Century Gothic", Roboto, Avenir, sans-serif;
+  --stack-b: "Poppins", "Century Gothic", Roboto, Avenir, sans-serif;
+  --stack-i: "Poppins", "Century Gothic", Roboto, Avenir, sans-serif;
+  --stack-bi: "Poppins", "Century Gothic", Roboto, Avenir, sans-serif;
+  --stack-h: "Poppins", Calibri, "Century Gothic", Roboto, Avenir, sans-serif;
+
+  --body-text: #24313a;
+  --body-bg: #fff;
+  --text-inv: #fff;
+  --visited-inv: #c2c2c2;
+
+  --main-color: #0073bd;
+  --main-tx: #fff;
+  /*--main-medium: #D0D8DD;*/
+  --main-light: #eaf2f9;
+  --main-light-tx: #24313a;
+  --main-high: #a3cbe4;
+  /* light saturated */
+
+  --n-dark: #24313a;
+  --n-medium: #d9d9d9;
+  /*--n-medium: #C6DAE7;*/
+  /*--n-medium-a: #919191;*/
+  --n-light: #5e6267;
+  --n-u-light: #eee;
+
+  /*--hot-light: #FBE3C9;*/
+  --highlight: #b23e70;
+  --focus-color: #ff830f;
+  --focus-light: #fff2e5;
+  --alert-color: #b00;
+
+  --radius: 0.5em;
+  --radius-h: 0.25em;
+  --text-color: #fff !important;
+  --primary-color-light: #31353d !important;
+
+  --text-color-secondary: #fff !important;
+  --primary-color: #0073bd !important;
+  --surface-hover: #0073bd !important;
+  --surface-border: #0073bd !important;
+  --secondary: #9ca6a5;
+  --primary-color-text: #fff !important;
+  // --bs-primary-rgb: rgb(27 117 57) !important;
+  --bs-list-group-active-bg: #0073bd !important;
+  --bs-list-group-active-border-color: #0073bd !important;
+  --bs-primary-rgb: 17, 17, 17 !important;
+  --bs-secondary-rgb: 255, 255, 255 !important;
+  --font-family: "Poppins", BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --font-family-sans-serif: "Poppins", BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --font-family-monospace: "Poppins", Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+.list-group {
+  --bs-list-group-active-bg: #0073bd !important;
+  --bs-list-group-active-border-color: #0073bd !important;
+}

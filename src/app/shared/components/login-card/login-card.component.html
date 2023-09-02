@@ -1,0 +1,35 @@
+<div class="row g-0">
+  <div class="col-sm-12 d-flex align-items-center justify-content-center">
+    <form [formGroup]="accountForm" id="accountForm" #dialogFormTag="ngForm" [formGroup]="accountForm"
+      class="flex flex-column w-100" (ngSubmit)="onSubmit(accountForm)">
+
+      <div class="d-flex flex-column align-items-center mb-3 pb-1 w-100">
+        <h6>Connexion</h6>
+      </div>
+
+      <!-- <h5 class="fw-normal mb-3 pb-3 text-center" style="letter-spacing: 1px;">Sign into your account</h5> -->
+
+      <div class="field mb-4">
+        <label for="email" class="small">Adresse e-mail*</label>
+        <input class="w-full" type="email" pInputText [formControlName]="'email_user'" />
+      </div>
+
+      <div class="field d-flex flex-column">
+        <label for="password" class="small">Mot de passe*</label>
+        <!-- <input class="w-full" type="password" pInputText [formControlName]="'password_user'" /> -->
+        <p-password styleClass="w-100" [formControlName]="'password_user'" [feedback]="false"
+          [toggleMask]="true"></p-password>
+      </div>
+      <div class="bg-gray-100 small text-center p-3 mb-3" *ngIf="displayError">
+        <span class="font-semibold">{{errorMessage}}.</span> Appuyez sur <a href="" class="underline">Mot
+          de
+          passe oublié</a> si vous n'arrivez pas à vous connecter.
+      </div>
+      <div class="pt-1 mb-4">
+        <button pButton class="w-full " pRipple type="button" label="Se connecter" (click)="onSubmit(accountForm)">Se
+          connecter</button>
+      </div>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,44 @@
+.info-section a {
+    text-decoration: none;
+    color: hsl(0, 0%, 0%);
+}
+.info-section ul {
+  font-size: 0.9em;
+}
+.collection-section a {
+  text-decoration: none;
+  color: #fff;
+}
+.collection-section ul {
+  font-size: 0.8em;
+}
+a:hover {
+    color: #484646;
+    text-decoration: underline !important;
+}
+
+.content .item {
+  border: 1px solid #828282;
+  border-radius: 4px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  justify-content: center;
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  width: 4rem;
+  margin-right: 2em;
+}
+
+.content img{
+  display: block;
+    height: 2rem;
+    width: 100%;
+    object-fit: contain;
+}
+.content {
+  margin-top: 2rem;
+  column-count: 2;
+}
