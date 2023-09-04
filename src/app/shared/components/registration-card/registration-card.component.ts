@@ -32,7 +32,8 @@ export class RegistrationCardComponent implements OnInit {
   }
   onSubmit(form: FormGroup): void {
     console.log(form);
-
+    localStorage.setItem('user', JSON.stringify(form.value));
+    this.userUpdated.emit(form.value);
   }
 
 }

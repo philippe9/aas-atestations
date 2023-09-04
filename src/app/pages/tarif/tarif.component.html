@@ -1,0 +1,34 @@
+<app-header [showbutton]="false"></app-header>
+<main class="m-2 bg-gray-200 min-vh-100">
+  <div class="mt-4 pt-4 bg-white p-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-5">
+          <h2>Chez qui voulez vous vous faire assurer ?</h2>
+          <div class="row">
+            <div class="col-6" style="position: relative;">
+              <div [ngClass]="{ 'selected-img': actualAss === 'axa' }" aria-hidden="true" class="selected-img pointer"
+                (keyup)="selectedAssurance('axa')" (click)="selectedAssurance('axa')">
+                <img src="assets/images/misc/assurance_1.jpg" alt="">
+                <i class="pi pi-check selected-img" *ngIf="actualAss === 'axa'"></i>
+              </div>
+
+            </div>
+            <div class="col-6" style="position: relative;">
+              <div [ngClass]="{ 'selected-img': actualAss === 'nsia' }" aria-hidden="true" class="selected-img pointer"
+                (keyup)="selectedAssurance('axa')" (click)="selectedAssurance('nsia')">
+                <img src="assets/images/misc/assurance_2.jpg" alt="">
+                <i class="pi pi-check selected-img" *ngIf="actualAss === 'nsia'"></i>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="col-7"></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+<app-footer></app-footer>

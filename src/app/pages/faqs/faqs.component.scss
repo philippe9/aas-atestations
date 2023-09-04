@@ -1,0 +1,13 @@
+:host ::ng-deep .p-accordion .p-accordion-tab.p-accordion-tab-active {
+  margin-bottom: 0px !important;
+}
+:host ::ng-deep .header-accordion {
+  margin: 0px;
+}
+:host ::ng-deep .p-accordion-header-text {
+  font-weight: 500;
+}
+:host ::ng-deep .pi {
+  font-size: 0.65em;
+  font-weight: 600;
+}

@@ -1,8 +1,21 @@
 /* --------------------------------------------------------------------
-    lbm CONTACT 2023
+    AAS 2023
 	Default Theme Variables
 /*-------------------------------------------------------------------- */
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("../fonts/Roboto-Regular.ttf");
+}
 
+@font-face {
+  font-family: "RobotoThin";
+  src: url("../fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: "RobotoBold";
+  src: url("../fonts/Roboto-Bold.ttf");
+}
 $primary: #0073bd;
 $secondary: #9ca6a5;
 $theme-colors: (
@@ -15,11 +28,11 @@ $theme-colors: (
 ) !default;
 
 :root {
-  --stack: "Poppins", "Century Gothic", Roboto, Avenir, sans-serif;
-  --stack-b: "Poppins", "Century Gothic", Roboto, Avenir, sans-serif;
-  --stack-i: "Poppins", "Century Gothic", Roboto, Avenir, sans-serif;
-  --stack-bi: "Poppins", "Century Gothic", Roboto, Avenir, sans-serif;
-  --stack-h: "Poppins", Calibri, "Century Gothic", Roboto, Avenir, sans-serif;
+  --stack: "RobotoRegular", "Century Gothic", Roboto, Avenir, sans-serif;
+  --stack-b: "RobotoBold", "Century Gothic", Roboto, Avenir, sans-serif;
+  --stack-i: "RobotoThin", "Century Gothic", Roboto, Avenir, sans-serif;
+  --stack-bi: "RobotoThin", "Century Gothic", Roboto, Avenir, sans-serif;
+  --stack-h: "RobotoBold", Calibri, "Century Gothic", Roboto, Avenir, sans-serif;
 
   --body-text: #24313a;
   --body-bg: #fff;
@@ -61,15 +74,15 @@ $theme-colors: (
   // --bs-primary-rgb: rgb(27 117 57) !important;
   --bs-list-group-active-bg: #0073bd !important;
   --bs-list-group-active-border-color: #0073bd !important;
-  --bs-primary-rgb: 17, 17, 17 !important;
-  --bs-secondary-rgb: 255, 255, 255 !important;
-  --font-family: "Poppins", BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
+  --bs-primary-rgb: rgb(0, 115, 189) !important;
+  --bs-secondary-rgb: rgb(156, 166, 165) !important;
+  --font-family: "Roboto", BlinkMacSystemFont, Segoe UI, Roboto, Helvetica,
     Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-  --font-family-sans-serif: "Poppins", BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-  --font-family-monospace: "Poppins", Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  --font-family-sans-serif: "RobotoRegular", BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: "RobotoRegular", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 .list-group {

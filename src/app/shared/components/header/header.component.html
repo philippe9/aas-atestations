@@ -1,35 +1,45 @@
 <nav class="navbar navbar-expand-lg w-100 justify-content-around bg-white position-fixed hide-on-med-and-down"
   style="z-index: 3;">
-  <div class="w-100">
-    <div class="row">
+  <div class="w-100 container">
+    <div class="row w-100">
       <h3 class="col-2 d-flex align-items-center text-left pointer mb-0 p-0"><a
           class="no-underline text-primary mb-0 ml-4 d-flex align-items-center flex-column" href="">
-          <img src="assets/images/logo/logo.png" alt="" srcset="" style="height: 1.5em;">
+          <img src="assets/images/logo/logo.png" alt="" srcset="" style="height: 75px;">
         </a>
       </h3>
-      <div class="col-8 d-flex align-items-center">
-
+      <div class="col-5 d-flex align-items-center">
+        <ul class="navbar-nav text-primary">
+          <li class="dropdown-collection">
+            <span>
+              <i class="pi pi-info-circle"></i>
+              <a href="https://www.aas.sn/"
+                class="h6 text-primary mr-5 hvr-underline-from-left dropdown-collection ml-2">Qui
+                sommes
+                nous</a>
+            </span>
+          </li>
+          <li class="dropdown-collection">
+            <span>
+              <i class="pi pi-exclamation-triangle"></i>
+              <a href="/contact" class="h6 text-primary mr-5 hvr-underline-from-left dropdown-collection ml-2">Signaler
+                un incident</a>
+            </span>
+          </li>
+          <li class="dropdown-collection">
+            <span>
+              <i class="pi pi-question-circle"></i>
+              <a href="/faqs" class="h6 text-primary mr-5 hvr-underline-from-left dropdown-collection ml-2">FAQs</a>
+            </span>
+          </li>
+        </ul>
       </div>
-      <!-- <div class="col-1"></div> -->
-      <ul class="col-2 navbar-nav text-primary align-items-center justify-content-evenly ">
-        <li> <a href="/contact" class="text-decoration-none h6 text-primary hvr-bob mb-0" title="Contact"><i
-              class="pi pi-comment"></i></a>
-        </li>
-        <!-- <li> <a href="/contact" class="text-decoration-none h6 text-primary hvr-bob mb-0" title="Favoris"><i
-              class="pi pi-heart"></i></a>
-        </li> -->
-
-      </ul>
+      <div class="col-5 d-flex align-items-center justify-content-end" *ngIf="showbutton">
+        <p-button routerLink="/subscription" label="Souscrire a mon assurance auto" icon="pi pi-check"
+          styleClass="mr-2 p-button-sm"></p-button>
+        <p-button routerLink="/user-space" label="Acceder a mon espace"
+          styleClass="p-button-outlined p-button-info p-button-sm"></p-button>
+      </div>
     </div>
   </div>
-  <!-- <h3 class="w-100 text-center pointer mb-0"><a class="no-underline text-secondary mb-0" href="">LeBoMeuble</a></h3>
-  <ul class="navbar-nav d-none d-md-flex d-lg-flex align-items-center justify-content-around w-100">
-    <li *ngIf="!isLogged"><button class="btn btn-primary" (click)="loginModal()">Login/Creation de compte</button></li>
-    <li *ngIf="isLogged">
-      <img class="border-circle pointer" src="assets/images/misc/user_placeholder.png" alt="" srcset="" height="50"
-        width="50" (click)="op.toggle($event)">
-    </li>
-  </ul>
-  <i (click)="sidebarVisible = true" class="pi pi-bars show-on-medium-and-down hide-on-large-only hide-on-med-only"
-    style="font-size: 2rem;position: absolute;left: 20px;top: 3px;"></i> -->
+
 </nav>

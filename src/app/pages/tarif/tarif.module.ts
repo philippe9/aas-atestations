@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SubscriptionRoutingModule } from './subscription-routing.module';
-import { SubscriptionComponent } from './subscription.component';
+import { TarifRoutingModule } from './tarif-routing.module';
+import { TarifComponent } from './tarif.component';
 import { SharedModule } from '@shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    SubscriptionComponent
+    TarifComponent
   ],
   imports: [
     CommonModule,
-    SubscriptionRoutingModule,
+    TarifRoutingModule,
     SharedModule
   ]
 })
-export class SubscriptionModule { }
+export class TarifModule { }

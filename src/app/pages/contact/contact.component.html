@@ -1,1 +1,98 @@
-<p>contact works!</p>
+<app-header></app-header>
+<main class="m-2">
+  <h1 class="fs-1 text-center mt-4 mb-4">Signaler un incident</h1>
+  <div class="row pb-5">
+    <div class="col-lg-1 col-12"></div>
+    <div class="col-12 col-lg-5">
+      <div class="card bg-gray-100 border-0 p-4 h-100">
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <h6 class="font-semibold mb-4">Appelez-nous</h6>
+            <p class="mb-1">Depuis le senegal</p>
+            <p><a href="tel:0671984312">06 719 84 312</a></p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <h6 class="font-semibold mb-4">Horaires</h6>
+            <p class="mb-1">Du lundi au vendredi: de 8h30 à 18h</p>
+            <p>Le samedi: de 8h30 à 17h</p>
+          </div>
+          <div class="col-12">
+            <h6 class="font-semibold mb-4">Retrait sur place</h6>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus quaerat repellat ipsa commodi eaque
+              quasi tenetur, id porro doloremque laudantium inventore sequi unde a, consequuntur sed deserunt officia
+              velit quidem.</p>
+          </div>
+          <div class="col-12">
+            <h6 class="font-semibold mb-4">Adresse du siège social</h6>
+            <p class="mb-1">74 Mermoz Pyrotechnie, SCI « La Maison de L’Assurance », 5eme étage - BP: 1766 Dakar</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-5">
+      <div class="card bg-gray-100 border-0 p-4">
+        <h5 class="font-semibold mb-2">Formulaire de contact</h5>
+        <h6 class="font-medium mb-2">Besoin d'une information ou de signaler in incident (disponibilité, spécificité…)
+        </h6>
+        <p>Remplissez le formulaire ci-dessous. Notre équipe de conseillers vous répondra par email sous 48h ouvrées.
+        </p>
+        <hr class="w-100">
+        <form class="row " id="accountForm" #dialogFormTag="ngForm" [formGroup]="accountForm"
+          (ngSubmit)="onSubmit(accountForm)">
+          <div class="col-12 col-lg-6">
+            <div class="p-label w-full">
+              <label for="input">Nom*</label>
+
+              <input class="w-full p-inputtext-sm" type="text" pInputText required name="name"
+                [formControlName]="'name'" />
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="p-label w-full">
+              <label for="input">Prenom*</label>
+
+              <input class="w-full p-inputtext-sm" type="text" pInputText required name="surname"
+                [formControlName]="'surname'" />
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="p-label w-full">
+              <label for="input">Email*</label>
+
+              <input class="w-full p-inputtext-sm" type="email" pInputText required name="email"
+                [formControlName]="'email'" />
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="p-label w-full">
+              <label for="input">Telephone*</label>
+
+              <input class="w-full p-inputtext-sm" type="text" pInputText required name="phone"
+                [formControlName]="'phone'" />
+            </div>
+          </div>
+          <!-- <div class="col-12">
+            <div class="p-label w-full">
+              <input class="w-full p-inputtext-sm" type="text" pInputText name="orderId"
+                [formControlName]="'orderId'" />
+              <label for="input">Numéro de commande</label>
+            </div>
+          </div> -->
+          <div class="col-12">
+            <span class="p-label w-full">
+              <textarea required [formControlName]="'message'" id="input" rows="5" cols="30" pInputTextarea
+                class="w-100" name="message"></textarea>
+              <label for="input">Message*</label>
+            </span>
+          </div>
+          <div class="col-12">
+            <p-button label="Valider" styleClass="p-button-lg w-100" (click)="onSubmit(accountForm)"></p-button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-1 col-12"></div>
+
+  </div>
+</main>
+<app-footer></app-footer>
