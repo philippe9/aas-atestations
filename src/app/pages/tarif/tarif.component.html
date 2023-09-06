@@ -1,34 +1,121 @@
 <app-header [showbutton]="false"></app-header>
 <main class="m-2 bg-gray-200 min-vh-100">
   <div class="mt-4 pt-4 bg-white p-4">
-    <div class="container">
+    <div class="container min-h-screen">
       <div class="row">
-        <div class="col-5">
-          <h2>Chez qui voulez vous vous faire assurer ?</h2>
-          <div class="row">
+        <div class="col-6 bg-blue-100 p-3">
+          <h3>Chez qui voulez vous vous faire assurer ?</h3>
+          <div class="row mt-3">
             <div class="col-6" style="position: relative;">
-              <div [ngClass]="{ 'selected-img': actualAss === 'axa' }" aria-hidden="true" class="selected-img pointer"
+              <div [ngClass]="{ 'selected-img': actualAss === 'axa' }" aria-hidden="true" class=" w-100 pointer"
                 (keyup)="selectedAssurance('axa')" (click)="selectedAssurance('axa')">
-                <img src="assets/images/misc/assurance_1.jpg" alt="">
+                <img src="assets/images/misc/assurance_1.jpg" alt="" class=" w-100">
                 <i class="pi pi-check selected-img" *ngIf="actualAss === 'axa'"></i>
               </div>
-
             </div>
             <div class="col-6" style="position: relative;">
-              <div [ngClass]="{ 'selected-img': actualAss === 'nsia' }" aria-hidden="true" class="selected-img pointer"
-                (keyup)="selectedAssurance('axa')" (click)="selectedAssurance('nsia')">
-                <img src="assets/images/misc/assurance_2.jpg" alt="">
+              <div [ngClass]="{ 'selected-img': actualAss === 'nsia' }" aria-hidden="true" class="w-100 pointer"
+                (keyup)="selectedAssurance('nsia')" (click)="selectedAssurance('nsia')">
+                <img src="assets/images/misc/assurance_2.jpg" alt="" class=" w-100">
                 <i class="pi pi-check selected-img" *ngIf="actualAss === 'nsia'"></i>
               </div>
-
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-6" style="position: relative;">
+              <div [ngClass]="{ 'selected-img': actualAss === 'providence' }" aria-hidden="true" class=" w-100 pointer"
+                (keyup)="selectedAssurance('providence')" (click)="selectedAssurance('providence')">
+                <img src="assets/images/misc/assurance_3.jpg" alt="" class=" w-100">
+                <i class="pi pi-check selected-img" *ngIf="actualAss === 'providence'"></i>
+              </div>
+            </div>
+            <div class="col-6" style="position: relative;">
+              <div [ngClass]="{ 'selected-img': actualAss === 'saar' }" aria-hidden="true" class="w-100 pointer"
+                (keyup)="selectedAssurance('saar')" (click)="selectedAssurance('saar')">
+                <img src="assets/images/misc/assurance_4.jpg" alt="" class=" w-100">
+                <i class="pi pi-check selected-img" *ngIf="actualAss === 'saar'"></i>
+              </div>
             </div>
           </div>
 
         </div>
-        <div class="col-7"></div>
+        <div class="col-6 text-center surface-200 p-3">
+          <p><i class="pi pi-car" style="font-size: larger;"></i></p>
+          <h2>{{assurance.carName}}</h2>
+          <h4>{{assurance.carModel}}</h4>
+          <h5>Formule conseillée</h5>
+          <p-card>
+            <h5>Tout risque</h5>
+            <h3>{{(35450 * selectedMonth) | number}} <small>FCFA</small></h3>
+            <p>Pour un contrat de </p>
+            <p-dropdown [options]="cities" [(ngModel)]="selectedMonth" optionLabel="name"
+              optionValue="value"></p-dropdown>
+          </p-card>
+          <div class="d-flex mt-3 justify-content-between">
+            <p-button (onClick)="sidebarNewArticle = true" label="Mes garanties sous ce contrat"
+              styleClass="p-button-outlined"></p-button>
+            <p-button (onClick)="subscribeModal = true" label="Souscrire a l'assurance"
+              styleClass="p-button-raised"></p-button>
+          </div>
+        </div>
       </div>
     </div>
 
   </div>
 </main>
+<p-sidebar [(visible)]="sidebarNewArticle" position="right" styleClass="article-sidebar">
+  <ng-template pTemplate="header">
+    <h3 class="fs-4 w-100">VOS GARANTIES</h3>
+  </ng-template>
+  <ol class="list-group list-group-numbered">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Responsabilité civile</div>
+        La garantie qui protège les autres en cas d’accident.
+      </div>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Défense / Recours</div>
+        L’assurance agit comme votre avocat.
+      </div>
+    </li>
+  </ol>
+</p-sidebar>
+<p-dialog header="Comment voulez vous payer ?" [(visible)]="subscribeModal" [modal]="true" [style]="{ width: '50vw' }"
+  [draggable]="false" [resizable]="false">
+  <div class="w-100 p-1">
+    <div class="row mb-3">
+      <div class="col-sm-12 col-lg-6 text-center hvr-sweep-to-right pointer" aria-hidden="true"
+        (keyup)="selectMeans('card')" (click)="selectMeans('card')">
+        <img aria-hidden="true" (keyup)="selectMeans('card')" (click)="selectMeans('card')" class="pointer"
+          src="assets/images/misc/atm-card.png" alt="" style="height: 100px;width: 100px;object-fit: contain;">
+        <p aria-hidden="true" (keyup)="selectMeans('card')" (click)="selectMeans('card')" class="pointer font-bold">
+          Carte Bancaire</p>
+      </div>
+      <div class="col-sm-12 col-lg-6 text-center hvr-sweep-to-right pointer" aria-hidden="true"
+        (keyup)="selectMeans('card')" (click)="selectMeans('card')">
+        <img aria-hidden="true" (keyup)="selectMeans('OM')" (click)="selectMeans('OM')" class="pointer"
+          src="assets/images/misc/om.jpg" alt="" style="height: 100px;width: 100px;object-fit: contain;">
+        <p aria-hidden="true" (keyup)="selectMeans('OM')" (click)="selectMeans('OM')" class="pointer font-bold">Orange
+          Money</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-lg-6 text-center hvr-sweep-to-right pt-2 pointer" aria-hidden="true"
+        (keyup)="selectMeans('card')" (click)="selectMeans('card')">
+        <img aria-hidden="true" (keyup)="selectMeans('wave')" (click)="selectMeans('wave')" class="pointer"
+          src="assets/images/misc/wave.webp" alt="" style="height: 100px;width: 100px;object-fit: contain;">
+        <p aria-hidden="true" (keyup)="selectMeans('wave')" (click)="selectMeans('wave')" class="pointer font-bold">Wave
+        </p>
+      </div>
+      <div class="col-sm-12 col-lg-6 text-center hvr-sweep-to-right pt-2 pointer" aria-hidden="true"
+        (keyup)="selectMeans('card')" (click)="selectMeans('card')">
+        <img aria-hidden="true" (keyup)="selectMeans('OM')" (click)="selectMeans('agence')" class="pointer"
+          src="assets/images/misc/cashier.png" alt="" style="height: 100px;width: 100px;object-fit: contain;">
+        <p aria-hidden="true" (keyup)="selectMeans('OM')" (click)="selectMeans('agence')" class="pointer font-bold">
+          Payer par Agence</p>
+      </div>
+    </div>
+  </div>
+</p-dialog>
 <app-footer></app-footer>
