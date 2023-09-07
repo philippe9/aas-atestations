@@ -1,0 +1,71 @@
+<main class="p-4 watermarked w-100">
+  <div class="row">
+    <div class="col-3 surface-300 border-right-2 border-dashed">
+      <h6 class="text-center mb-4 pb-4 pt-4 border-bottom-2 border-dashed">A DETACHER POUR AFFICHER SUR LA PARE BRISE
+      </h6>
+      <div class="fs-5">
+        <p>VEHICULE:</p>
+        <p>Genre: <b class="font-bold">VP/CI</b></p>
+        <p>Marque: <b class="font-bold">{{assurance.carName}}</b></p>
+        <p>Type: <b class="font-bold">{{assurance.carModel}}</b></p>
+        <p>N. Imm: <b class="font-bold">{{assurance.immatriculation}}</b></p>
+        <p>Police N: <b class="font-bold">10925411538</b></p>
+        <p>Valable du : <b class="font-bold">{{assurance.date_debut}} à 00H00</b> au : <b
+            class="font-bold">{{assurance.date_fin}} à 23H59</b></p>
+      </div>
+      <div class="text-center">
+        <img [src]="'assets/images/misc/'+assurance.assurer+'.jpg'" alt="" class="object-fit-contain" height="100"
+          width="100">
+        <div class="border-round-xl bg-blue-500 text-white p-1">
+          <h5 class="mb-0">SN 065 185 8196</h5>
+        </div>
+      </div>
+      <h6 class="text-center pt-4 mt-4 pb-4 border-top-2 border-dashed">A DETACHER</h6>
+    </div>
+    <div class="col-4 pl-5 d-flex justify-content-center flex-column ">
+      <div class="fs-5 mb-5 pb-5">
+        <p>SOUSCRIPTEUR:</p>
+        <p>Nom: <b class="font-bold">{{user.prenom}} {{user.nom}}</b></p>
+        <p>Adresse: <b class="font-bold">DAKAR</b></p>
+
+      </div>
+      <div class="fs-5">
+        <p>VEHICULE:</p>
+        <p>Genre: <b class="font-bold">VP/CI</b></p>
+        <p>Marque: <b class="font-bold">{{assurance.carName}}</b></p>
+        <p>Type: <b class="font-bold">{{assurance.carModel}}</b></p>
+        <p>N. Imm: <b class="font-bold">{{assurance.immatriculation}}</b></p>
+        <p>Police N: <b class="font-bold">10925411538</b></p>
+        <p>Valable du : <b class="font-bold">{{assurance.date_debut}} à 00H00</b> au : <b
+            class="font-bold">{{assurance.date_fin}} à 23H59</b></p>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="border-round-xl">
+        <div class="info-adress-section d-flex">
+          <img [src]="'assets/images/misc/'+assurance.assurer+'.jpg'" alt="" class="object-fit-contain" height="150"
+            width="150">
+          <div class="text-right small">
+            <p class="mb-0">01 rue Ramez Bourgi x place Kermel</p>
+            <p class="mb-0">Tél : +221 33 889 62 00</p>
+            <p class="mb-0">Fax: +221 33 821 33 63</p>
+            <p class="mb-0">B.P. 50184 DAKAR RP</p>
+            <p class="mb-0">e-mail : email@group.com</p>
+          </div>
+        </div>
+        <h6 class="text-center">Entreprise régie par le Code des Assurances</h6>
+        <h4 class="text-center mt-2 mb-2">Attestation d'assurance</h4>
+        <div class="border-round-xl bg-blue-500 text-white p-1 text-center mt-3 mb-3">
+          <h5 class="mb-0">SN 065 185 8196</h5>
+        </div>
+        <div class="text-center">
+          <img src="assets/images/misc/frame.png" alt="" class="object-fit-contain" height="200" width="200">
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="w-100">
+    <button class="float-end btn btn-primary" *ngIf="!printmode" (click)="printMedia()">IMPRIMER</button>
+  </div>
+</main>

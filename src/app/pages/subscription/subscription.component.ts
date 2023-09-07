@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { carModels } from '@shared/data/cars';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-subscription',
@@ -7,7 +8,7 @@ import { carModels } from '@shared/data/cars';
   styleUrls: ['./subscription.component.scss']
 })
 export class SubscriptionComponent implements OnInit {
-  currentStep = 3;
+  currentStep = 1;
   assurance = {
     carName: '',
     carModel: '',
@@ -18,6 +19,7 @@ export class SubscriptionComponent implements OnInit {
     circulationDate: '',
     newCarPrice: '',
     actualCarPrice: '',
+    immatriculation: '',
     assurer: '',
     periode: 1
   }
@@ -45,6 +47,10 @@ export class SubscriptionComponent implements OnInit {
   }
   userUpdated(user: any): void {
     localStorage.setItem('user', JSON.stringify(user));
-
+    Swal.fire(
+      'Compte enregistré',
+      'Votre compte a été enregistré vous pouvez procéder.',
+      'info'
+    )
   }
 }

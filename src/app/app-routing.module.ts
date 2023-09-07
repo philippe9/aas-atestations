@@ -10,7 +10,9 @@ const routes: Routes = [
   { path: 'faqs', loadChildren: () => import('./pages/faqs/faqs.module').then(m => m.FaqsModule) },
   { path: 'about-us', loadChildren: () => import('./pages/about-us/about-us.module').then(m => m.AboutUsModule) },
   { path: 'contact', loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule) },
-  { path: 'tarif', loadChildren: () => import('./pages/tarif/tarif.module').then(m => m.TarifModule) }
+  { path: 'tarif', loadChildren: () => import('./pages/tarif/tarif.module').then(m => m.TarifModule) },
+  { path: 'auth', loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule) },
+  { path: 'print', loadChildren: () => import('./pages/print/print.module').then(m => m.PrintModule) }
 ];
 
 @NgModule({

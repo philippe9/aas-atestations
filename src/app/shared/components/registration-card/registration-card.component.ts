@@ -24,6 +24,7 @@ export class RegistrationCardComponent implements OnInit {
     this.accountForm = this.fb.group({
       nom: ['', [Validators.required, Validators.minLength(2)]],
       prenom: ['', [Validators.required, Validators.minLength(2)]],
+      adresse: ['', [Validators.required, Validators.minLength(2)]],
       email_user: ['', [Validators.required, Validators.email]],
       password_user: ['', [Validators.required, Validators.minLength(5)]],
       // confirmPass: ['', [Validators.required, Validators.minLength(5)]]

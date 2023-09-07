@@ -27,9 +27,9 @@ export class UserSpaceComponent implements OnInit {
 
   ngOnInit(): void {
     this.accountForm = this.fb.group({
-      nom: ['', [Validators.required, Validators.minLength(2)]],
-      prenom: ['', [Validators.required, Validators.minLength(2)]],
-      email_user: ['', [Validators.email]],
+      nom: ['Philippe', [Validators.required, Validators.minLength(2)]],
+      prenom: ['Steve', [Validators.required, Validators.minLength(2)]],
+      email_user: ['philippesteve@atos.net', [Validators.email]],
       date_naissance: [''],
       password_user: ['', [Validators.required, Validators.minLength(5)]],
       confirmPass: ['', [Validators.required, Validators.minLength(5)]]

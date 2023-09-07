@@ -736,7 +736,7 @@ footer {
 }
 .parallax {
   /* The image used */
-  background-image: url("../../assets/images/misc/agree-1238964_1920.jpg");
+  background-image: url("../../assets/images/misc/agree-1238964_1920.webp");
 
   /* Set a specific height */
   min-height: 500px;
@@ -753,7 +753,8 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: url(../../assets/images/misc/agree-1238964_1920.jpg) bottom center;
+  background: url(../../assets/images/misc/agree-1238964_1920.webp) bottom
+    center;
   background-size: auto;
   background-repeat: no-repeat;
   // back

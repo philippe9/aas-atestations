@@ -8,4 +8,6 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 })
 export class HeaderComponent {
   @Input() showbutton = true;
+  user = localStorage.getItem('user');
+  sideBarMenu = false;
 }

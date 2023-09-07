@@ -7,33 +7,33 @@
           <h3>Chez qui voulez vous vous faire assurer ?</h3>
           <div class="row mt-3">
             <div class="col-6" style="position: relative;">
-              <div [ngClass]="{ 'selected-img': actualAss === 'axa' }" aria-hidden="true" class=" w-100 pointer"
-                (keyup)="selectedAssurance('axa')" (click)="selectedAssurance('axa')">
+              <div [ngClass]="{ 'selected-img': actualAss === 'assurance_1' }" aria-hidden="true" class=" w-100 pointer"
+                (keyup)="selectedAssurance('assurance_1')" (click)="selectedAssurance('assurance_1')">
                 <img src="assets/images/misc/assurance_1.jpg" alt="" class=" w-100">
-                <i class="pi pi-check selected-img" *ngIf="actualAss === 'axa'"></i>
+                <i class="pi pi-check selected-img" *ngIf="actualAss === 'assurance_1'"></i>
               </div>
             </div>
             <div class="col-6" style="position: relative;">
-              <div [ngClass]="{ 'selected-img': actualAss === 'nsia' }" aria-hidden="true" class="w-100 pointer"
-                (keyup)="selectedAssurance('nsia')" (click)="selectedAssurance('nsia')">
+              <div [ngClass]="{ 'selected-img': actualAss === 'assurance_2' }" aria-hidden="true" class="w-100 pointer"
+                (keyup)="selectedAssurance('assurance_2')" (click)="selectedAssurance('assurance_2')">
                 <img src="assets/images/misc/assurance_2.jpg" alt="" class=" w-100">
-                <i class="pi pi-check selected-img" *ngIf="actualAss === 'nsia'"></i>
+                <i class="pi pi-check selected-img" *ngIf="actualAss === 'assurance_2'"></i>
               </div>
             </div>
           </div>
           <div class="row mt-3">
             <div class="col-6" style="position: relative;">
-              <div [ngClass]="{ 'selected-img': actualAss === 'providence' }" aria-hidden="true" class=" w-100 pointer"
-                (keyup)="selectedAssurance('providence')" (click)="selectedAssurance('providence')">
+              <div [ngClass]="{ 'selected-img': actualAss === 'assurance_3' }" aria-hidden="true" class=" w-100 pointer"
+                (keyup)="selectedAssurance('assurance_3')" (click)="selectedAssurance('assurance_3')">
                 <img src="assets/images/misc/assurance_3.jpg" alt="" class=" w-100">
-                <i class="pi pi-check selected-img" *ngIf="actualAss === 'providence'"></i>
+                <i class="pi pi-check selected-img" *ngIf="actualAss === 'assurance_3'"></i>
               </div>
             </div>
             <div class="col-6" style="position: relative;">
-              <div [ngClass]="{ 'selected-img': actualAss === 'saar' }" aria-hidden="true" class="w-100 pointer"
-                (keyup)="selectedAssurance('saar')" (click)="selectedAssurance('saar')">
+              <div [ngClass]="{ 'selected-img': actualAss === 'assurance_4' }" aria-hidden="true" class="w-100 pointer"
+                (keyup)="selectedAssurance('assurance_4')" (click)="selectedAssurance('assurance_4')">
                 <img src="assets/images/misc/assurance_4.jpg" alt="" class=" w-100">
-                <i class="pi pi-check selected-img" *ngIf="actualAss === 'saar'"></i>
+                <i class="pi pi-check selected-img" *ngIf="actualAss === 'assurance_4'"></i>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
           <h5>Formule conseillée</h5>
           <p-card>
             <h5>Tout risque</h5>
-            <h3>{{(35450 * selectedMonth) | number}} <small>FCFA</small></h3>
+            <h3>{{(basePrice * selectedMonth) | number}} <small>FCFA</small></h3>
             <p>Pour un contrat de </p>
             <p-dropdown [options]="cities" [(ngModel)]="selectedMonth" optionLabel="name"
               optionValue="value"></p-dropdown>

@@ -9,7 +9,7 @@
         <p-card styleClass="w-11">
           <div class="d-flex align-items-center">
             <span class="mr-2">ETAPE {{currentStep}} / 4</span>
-            <p-progressBar styleClass="w-12" [value]="currentStep * 20"></p-progressBar>
+            <p-progressBar styleClass="w-12" [value]="currentStep * 25"></p-progressBar>
           </div>
         </p-card>
       </div>
@@ -50,7 +50,11 @@
             </div>
           </p-card>
         </div>
-        <h5 class="text-center mt-4 mb-4">Combien de places assises?</h5>
+        <div class="flex flex-column gap-2 mt-5 mb-4">
+          <h5 class="text-center mt-4 mb-4">Le numero d'immatriculation de votre vehicule</h5>
+          <input pInputText id="username" aria-describedby="username-help" [(ngModel)]="assurance.immatriculation" />
+        </div>
+        <h5 class="text-center mt-4 mb-4">Combien de places assises ?</h5>
         <p-inputNumber [(ngModel)]="assurance.seats" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal"
           spinnerMode="horizontal" [step]="1" incrementButtonIcon="pi pi-plus"
           decrementButtonIcon="pi pi-minus"></p-inputNumber>
@@ -101,13 +105,17 @@
       <div class="container w-22rem">
         <h5 class="text-center mt-5 mb-5">Quel est la valeur de votre vehicule neuf ?</h5>
         <div class="p-inputgroup">
-          <input type="text" pInputText placeholder="" [(ngModel)]="assurance.newCarPrice" />
-          <span class="p-inputgroup-addon">FCFA</span>
+          <!-- <input type="text" pInputText placeholder="" [(ngModel)]="assurance.newCarPrice" />
+          <span class="p-inputgroup-addon">FCFA</span> -->
+          <p-inputNumber inputId="integeronly" [(ngModel)]="assurance.newCarPrice"> </p-inputNumber>
+
         </div>
         <h5 class="text-center mt-5 mb-5">Que vaut elle aujourd'hui sur le marché ?</h5>
         <div class="p-inputgroup">
-          <input type="text" pInputText placeholder="" [(ngModel)]="assurance.actualCarPrice" />
-          <span class="p-inputgroup-addon">FCFA</span>
+          <!-- <input type="text" pInputText placeholder="" [(ngModel)]="assurance.actualCarPrice" />
+          <span class="p-inputgroup-addon">FCFA</span> -->
+          <p-inputNumber inputId="integeronly" [(ngModel)]="assurance.actualCarPrice"> </p-inputNumber>
+
         </div>
         <div class="d-flex justify-content-center w-100 h-10rem flex-row mt-4">
           <p-button label="Continuer" icon="pi pi-arrow-right" iconPos="right" (click)="updateStep(4)"></p-button>

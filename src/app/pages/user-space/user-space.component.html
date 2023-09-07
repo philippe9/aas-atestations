@@ -13,7 +13,7 @@
             assurances</li>
           <li aria-hidden="true" [class.active]="selectedMenu === 'myAdresses'" (keyup)="navigateToMenu('myAdresses')"
             (click)="navigateToMenu('myAdresses')" class="rounded list-group-item list-group-item-action pointer">
-            Services client</li>
+            Service client</li>
           <li aria-hidden="true" (click)="logout()" class="rounded list-group-item list-group-item-action pointer">
             Deconnexion</li>
         </ul>
@@ -64,19 +64,19 @@
             (ngSubmit)="onSubmit(accountForm)">
             <div class="field col-12 col-lg-6 mb-2">
               <div class="p-float-label w-full">
-                <input class="w-full" type="password" pInputText [formControlName]="'prenom'" />
+                <input class="w-full" type="password" pInputText [formControlName]="'password_user'" />
                 <label for="float-input"> Mot De Passe Actuel</label>
               </div>
             </div>
             <div class="field col-12 col-lg-6 mb-2">
               <div class="p-float-label w-full">
-                <input class="w-full" type="password" pInputText [formControlName]="'prenom'" />
+                <input class="w-full" type="password" pInputText [formControlName]="'password_user'" />
                 <label for="float-input"> Nouveau Mot De Passe</label>
               </div>
             </div>
             <div class="field col-12 col-lg-6 mb-2">
               <div class="p-float-label w-full">
-                <input class="w-full" type="password" pInputText [formControlName]="'prenom'" />
+                <input class="w-full" type="password" pInputText [formControlName]="'password_user'" />
                 <label for="float-input"> Confirmation</label>
               </div>
             </div>
@@ -103,14 +103,14 @@
         </div>
       </section>
       <section class="mes-commandes" *ngIf="selectedMenu === 'myOrders'">
-        <h2>Mes commandes</h2>
+        <h2>Mes assurances</h2>
         <div class="card">
           <p-table [rowHover]="true" [value]="commandes" [tableStyle]="{'min-width': '50rem'}">
             <ng-template pTemplate="header">
               <tr>
-                <th>Commande</th>
+                <th>Num Police</th>
                 <th>Date</th>
-                <th>Statut du paiement</th>
+                <th>Matricule</th>
                 <th>Mon releve</th>
                 <th>Mon contrat</th>
               </tr>
@@ -124,7 +124,7 @@
                 </td>
                 <td *ngIf="!commande.is_paid"><p-tag severity="danger" value="Non-Payée" [rounded]="true"></p-tag></td>
                 <td>{{commande.etat}}</td>
-                <td><a *ngIf="commande.delivery_url" [href]="commande.delivery_url" target="_blank"> Lien de suivi</a>
+                <td><a [href]="commande.delivery_url" target="_blank"> Lien de suivi</a>
                 </td>
                 <td>
 
@@ -135,7 +135,7 @@
         </div>
       </section>
       <section class="mes-adresses" *ngIf="selectedMenu === 'myAdresses'">
-        <h2>Services client</h2>
+        <h2>Service client</h2>
         <!-- <div class="w-100 mb-3">
           <p-button (click)="openModalAdresseLivraison()" label="Ajouter une adresse de livraison"
             styleClass="p-button-outlined">

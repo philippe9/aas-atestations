@@ -1,0 +1,24 @@
+.watermarked:after {
+  /* draw the watermark at screen*/
+  color: rgba(0, 0, 0, 0.15);
+  content: "specimen specimen specimen specimen specimen specimen specimen specimen ";
+  word-spacing: 3em;
+  transform: rotate(-60deg);
+  filter: drop-shadow(2em 3em #000) drop-shadow(4em 6em #000)
+    drop-shadow(8em 12em #000) drop-shadow(-15em -24em #000);
+}
+
+/* makeup */
+.watermarked {
+  width: max-content;
+  // border: solid;
+  display: grid;
+  overflow: hidden;
+}
+
+img,
+.watermarked:after {
+  grid-row: 1;
+  grid-column: 1;
+  margin: auto;
+}
